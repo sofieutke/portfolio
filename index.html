@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofies portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Corben&family=Lato:wght@700&family=Lexend+Exa:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Corben&family=Lato:wght@700&family=Lexend+Exa:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+
+<body>
+    <header>
+
+        <div class="hero-title">
+            <h1>SOFIE UTKE | PORTFOLIO </h1>
+        </div>
+        <!-- Use any element to open/show the overlay navigation menu -->
+        <div class="burger" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+
+        <!-- The overlay -->
+        <div id="myNav" class="overlay">
+
+            <!-- Button to close the overlay navigation -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <a href="tema02.html">TEMA 02</a>
+                <a href="tema03.html">TEMA 03</a>
+                <a href="tema04.html">TEMA 04</a>
+                <a href="tema05.html">TEMA 05</a>
+                <a href="aboutme.html">OM SOFIE</a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="slideshow" style="max-width:500px">
+                <img class="mySlides" src="billeder/pic1.webp" alt="pic1" style="width:100%">
+                <img class="mySlides" src="billeder/pic2.webp" alt="pic2" style="width:100%">
+                <img class="mySlides" src="billeder/pic3.webp" alt="pic3" style="width:100%">
+                <img class="mySlides" src="billeder/pic4.webp" alt="pic4" style="width:100%">
+                <img class="mySlides" src="billeder/pic5.webp" alt="pic5" style="width:100%">
+                <img class="mySlides" src="billeder/pic6.webp" alt="pic6" style="width:100%">
+                <img class="mySlides" src="billeder/pic7.webp" alt="pic7" style="width:100%">
+                <img class="mySlides" src="billeder/pic8.webp" alt="pic8" style="width:100%">
+                <img class="mySlides" src="billeder/pic9.webp" alt="pic9" style="width:100%">
+                <img class="mySlides" src="billeder/pic10.webp" alt="pic10" style="width:100%">
+                <img class="mySlides" src="billeder/pic11.webp" alt="pic11" style="width:100%">
+            </div>
+        </div>
+
+        <div class="intro-section">
+            <p>Hej, jeg hedder Sofie. Velkommen til mit kreative univers. Udforsk, opdag og bliv inspireret af mine
+                projekter
+                nedenunder</p>
+        </div>
+
+        <div class="nav-container">
+            <div class="nav-section">
+                <h2>TEMA</h2>
+                <h3>02</h3>
+                <p>WEB</p>
+                <a href="tema02.html" class="read-more" style="background-image: url(billeder/knap.webp);">Læs mere</a>
+            </div>
+            <div class="nav-section">
+                <h2>TEMA</h2>
+                <h3>03</h3>
+                <p>UX/UI</p>
+                <a href="tema03.html" class="read-more" style="background-image: url(billeder/knap.webp);">Læs mere</a>
+            </div>
+            <div class="nav-section">
+                <h2>TEMA</h2>
+                <h3>04</h3>
+                <p>ANIMATION</p>
+                <a href="tema04.html" class="read-more" style="background-image: url(billeder/knap.webp);">Læs mere</a>
+            </div>
+            <div class="nav-section">
+                <h2>TEMA</h2>
+                <h3>05</h3>
+                <p>INDHOLD</p>
+                <a href="tema05.html" class="read-more" style="background-image: url(billeder/knap.webp);">Læs mere</a>
+            </div>
+            <div class="nav-section">
+                <h4>OM SOFIE</h4>
+                <a href="aboutme.html" class="read-more" style="background-image: url(billeder/knap.webp);">Læs mere</a>
+            </div>
+        </div>
+        <script src="login.js"></script>
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="contact-container">
+            <form>
+                <div class="form-row">
+                    <input type="text" placeholder="NAVN">
+                    <input type="text" placeholder="EMAIL">
+                </div>
+                <div class="form-row bottom">
+                    <input type="text" placeholder="EMNE" class="form-text">
+                </div>
+                <button type="submit">SEND</button>
+            </form>
+        </div>
+        <div class="social-links">
+            <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="tel:+14577921302"><i class="phone"></i></a>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

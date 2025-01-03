@@ -1,0 +1,435 @@
+/************ Reset ***************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/************** Burgermenu *********/
+.burger {
+  display: block;
+  cursor: pointer;
+  position: fixed; /* Fixed position */
+  top: 30px; /* Adjust based on header size */
+  right: 60px; /* Distance from the right */
+  z-index: 1000; /* High z-index to keep it above other content */
+}
+
+.bar {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin: 5px 0;
+  margin-bottom: 9px;
+  background-color: #374375;
+}
+
+/*********** media for burgermenu til mindre skærme *****/
+/* Tilpasning for tablets */
+@media (max-width: 768px) {
+  .burger {
+    top: 20px; /* Mindre afstand fra toppen for at give plads til hero-titel */
+    right: 30px; /* Mindre afstand fra højre for at passe indenfor mindre skærmstørrelser */
+  }
+  .bar {
+    width: 30px;
+    height: 4px;
+  }
+}
+
+/* Tilpasning for smartphones */
+@media (max-width: 480px) {
+  .burger {
+    top: 15px; /* Yderligere reduceret afstand fra toppen */
+    right: 20px; /* Tættere til højre kant for bedre pladsudnyttelse */
+  }
+  .bar {
+    width: 30px;
+    height: 4px;
+  }
+}
+
+/******* burgermenu overlay **********/
+.overlay {
+  height: 100%;
+  width: 0; /* Overlay hidden initially */
+  position: fixed;
+  z-index: 99; /* Below the burger icon */
+  left: 0;
+  top: 0;
+  background-color: #e8e8d7;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.4s;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 100px; /* Start below any top margin or header */
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 10px;
+  text-decoration: none;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-size: 36px;
+  color: #374375;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  text-decoration: underline;
+  color: #780000;
+}
+
+/************* slideshow forside ************/
+
+body {
+  background-color: #e8e8d7;
+}
+
+.hero-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Sikrer, at billedet dækker hele hero-sektionen */
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 700px; /* Justér efter behov */
+  overflow: hidden;
+  background-image: url("billeder/baggrund.webp");
+  background-size: cover;
+  background-position: center;
+  z-index: 1; /* Lavere z-index end slideshow */
+  margin-top: 55px;
+}
+
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center; /* Centrerer slides vertikalt, hvis nødvendigt */
+  animation: slideInfinite 20s linear infinite;
+  z-index: 2; /* Højere z-index for at være ovenpå baggrundsbilledet */
+  gap: 10%;
+}
+
+.mySlides {
+  flex: 0 0 70%; /* Mindre bredde, så hvert billede kun fylder en del af skærmen */
+  width: auto; /* Bevarer billedets oprindelige proportioner */
+  height: auto; /* Justerer højden automatisk baseret på bredde */
+}
+
+@keyframes slideInfinite {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-300%);
+  } /* Juster dette baseret på antallet af billeder */
+}
+
+/********** media for slideshow til mindre skærme *****/
+/* Tilpasning for tablets */
+@media (max-width: 768px) {
+  .mySlides {
+    flex: 0 0 70%; /* Øger procenten for at gøre billederne lidt større i forhold til skærmen */
+  }
+}
+
+/* Tilpasning for smartphones */
+@media (max-width: 480px) {
+  .mySlides {
+    flex: 0 0 65%; /* Gør billeder større i forhold til meget små skærme */
+  }
+}
+
+/************ H1 overskrift til forside ********/
+.hero-title {
+  color: #374375; /* Farven på teksten, vælg hvad der passer bedst til din baggrund */
+  font-family: "Playfair Display", serif;
+  margin-top: 30px;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+/************ media for mindre skærme til hero title ******/
+/* Media query for mindre skærme som tablets */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 15px; /* Mindre skriftstørrelse for tablets */
+    margin-top: 20px; /* Mindre margin i toppen */
+  }
+}
+
+/* Media query for smartphones */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 12px; /* Endnu mindre skriftstørrelse for smartphones */
+    margin-top: 10px; /* Yderligere reduceret topmargin for at undgå overlapning med burgermenu */
+  }
+}
+
+/********** intro tekstboks på forside *********/
+.intro-section {
+  background-color: #374375; /* Blå baggrund for hele sektionen */
+  color: #e8e8d7; /* Lys tekstfarve for god kontrast */
+  padding: 40px; /* Indvendig plads rundt om alt indhold */
+  text-align: center;
+  margin: 50px auto;
+  max-width: 40%;
+  font-family: "Poppins", serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 20px;
+}
+
+/*********** section med nav links ***********/
+.nav-container {
+  display: flex; /* Anvender flexbox */
+  overflow-x: auto; /* Tillader horisontal rulning */
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 20px;
+  background-color: #e8e8d7; /* Baggrundsfarve */
+}
+
+/* Media query for mindre skærme som tablets */
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 15px; /* Lidt mindre padding for at spare plads */
+    margin: 20px auto; /* Mindre margen for at tilpasse til mindre skærme */
+    max-width: 90%; /* Lidt bredere på mindre skærme for at udnytte pladsen bedre */
+  }
+}
+
+/* Media query for smartphones */
+@media (max-width: 480px) {
+  .intro-section {
+    padding: 10px; /* Endnu mindre padding */
+    margin: 10px auto; /* Mindre margen for at maksimere brugen af den tilgængelige plads */
+    max-width: 95%; /* Næsten fuld bredde for at maksimere læsbarheden */
+    font-size: calc(12px + 2vw); /* Justerer skriftstørrelsen dynamisk baseret på skærmstørrelse */
+  }
+}
+.nav-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #e8e8d7;
+  border: 1px solid #374375;
+  width: 18%;
+  min-width: 200px;
+  height: 650px;
+  min-width: 160px; /* Sætter en minimumsbredde for hver sektion */
+}
+
+/*********** Knap til nav section *******/
+.read-more {
+  display: flex;
+  justify-content: center; /* Centrerer teksten horisontalt */
+  align-items: center; /* Centrerer teksten vertikalt */
+  background-color: transparent; /* Gør baggrunden gennemsigtig, så billedet kan ses */
+  border: none;
+  cursor: pointer;
+  color: #e8e8d7; /* Skift tekstfarven til hvid for læsbarhed */
+  width: 100%; /* Sørger for at knappen fylder hele bredden af containeren */
+  height: 100px; /* Sæt en fast højde */
+  background-image: url("billeder/knap.webp");
+  background-size: cover; /* Sikrer, at baggrundsbilledet dækker hele knappen */
+  background-position: center; /* Centrerer billedet i knappen */
+  text-decoration: none;
+  font-size: 20px; /* Justér skriftstørrelsen efter behov */
+}
+
+.read-more1 {
+  background-color: transparent; /* Gør baggrunden gennemsigtig, så billedet kan ses */
+  border: none;
+  cursor: pointer;
+  color: #e8e8d7; /* Skift tekstfarven til hvid for læsbarhed */
+  width: 100%; /* Sørger for at knappen fylder hele bredden af containeren */
+  height: 100px; /* Sæt en fast højde */
+  background-position: center; /* Centrerer billedet i knappen */
+  align-items: center; /* Centrerer teksten vertikalt */
+  justify-content: center; /* Centrerer teksten horisontalt */
+  text-decoration: none;
+  font-size: 20px; /* Justér skriftstørrelsen efter behov */
+}
+.nav-section:hover,
+.read-more:hover,
+.read-more1:hover {
+  color: #e8e8d7;
+}
+
+.nav-section:hover {
+  background-color: #9099bc;
+}
+.read-more:hover,
+.read-more1:hover {
+  text-decoration: underline;
+}
+
+/******* tekst til nav links sektion ************/
+.nav-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  color: #374375;
+  margin-top: 80%;
+  align-self: flex-start;
+}
+.nav-section h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 120px;
+  color: #374375;
+  align-self: center;
+}
+.nav-section p {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  color: #374375;
+  align-self: flex-end;
+  margin-bottom: 40px;
+}
+.nav-section h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 35px;
+  color: #374375;
+  margin-top: 137%;
+  align-self: center;
+  margin-bottom: 110px;
+}
+
+/************ media til tekst o ******/
+/* Media query for tablets og under */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column; /* Stack sektionerne vertikalt */
+  }
+
+  .nav-section {
+    width: 100%; /* Gør sektionerne bredere til at fylde skærmen */
+    height: auto; /* Gør højden automatisk for at passe til indholdet */
+    margin-bottom: 10px; /* Tilføjer afstand mellem sektionerne */
+  }
+
+  .read-more {
+    order: 2; /* Placer knappen efter tekst */
+    width: auto;
+    padding: 10px 50px; /* Mere klikbar størrelse */
+  }
+
+  .nav-section h2,
+  .nav-section p,
+  .nav-section h4 {
+    font-size: calc(12px + 2vw); /* Skalerbar tekststørrelse */
+    text-align: left; /* Justerer teksten til venstre */
+    margin: 5px 0; /* Reducerer margin mellem tekst */
+  }
+  .nav-section h3 {
+    font-size: calc(30px + 2vw); /* Skalerbar tekststørrelse */
+  }
+}
+
+/* Media query for smartphones */
+@media (max-width: 480px) {
+  .nav-section {
+    padding: 10px; /* Mindre padding */
+  }
+
+  .read-more {
+    font-size: calc(10px + 2vw); /* Mindre tekststørrelse */
+  }
+}
+
+/*************** footer ***********/
+.footer {
+  background-color: #374375; /* Mørk baggrund for footer */
+  color: #e8e8d7; /* Hvid tekstfarve */
+  text-align: right; /* Centrerer teksten */
+  padding: 10px; /* Tilføjer padding for at give rum omkring elementerne */
+  font-size: 16px; /* Størrelse på teksten */
+}
+
+.social-links a {
+  color: #e8e8d7; /* Hvid farve links */
+  margin: 10px; /* Afstand mellem links */
+  font-size: 40px; /* Større ikoner */
+}
+
+.social-links a:hover {
+  color: #780000;
+  cursor: pointer;
+}
+
+/************** form til footer *********/
+.contact-container {
+  padding: 25px;
+  max-width: 600px;
+  justify-content: end;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1; /* Giver inputfelterne fleksibilitet til at fylde tilgængelig plads */
+  margin-right: 10px; /* Giver plads mellem input felterne */
+  padding: 8px;
+  border: 2px solid #e8e8d7;
+}
+
+input[type="text"]:last-child,
+.form-text {
+  margin-right: 0; /* Fjerner margin for det sidste element */
+}
+
+button {
+  background: #e8e8d7;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #780000;
+}
+
+/************ media til form i footer **********/
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .contact-container {
+    position: static; /* Fjerner absolut positionering på små skærme */
+    width: 100%; /* Fylder fuld bredde af skærmen */
+    left: 0; /* Nulstiller venstre margen */
+  }
+}
