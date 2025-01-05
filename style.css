@@ -164,19 +164,25 @@ body {
   text-align: center;
 }
 
+.hero-title a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+}
 /************ media for mindre skærme til hero title ******/
 /* Media query for mindre skærme som tablets */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 15px; /* Mindre skriftstørrelse for tablets */
-    margin-top: 20px; /* Mindre margin i toppen */
+    font-size: 12px; /* Mindre skriftstørrelse for tablets */
+    margin-top: 15px; /* Mindre margin i toppen */
   }
 }
 
 /* Media query for smartphones */
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 12px; /* Endnu mindre skriftstørrelse for smartphones */
+    font-size: 10px; /* Endnu mindre skriftstørrelse for smartphones */
     margin-top: 10px; /* Yderligere reduceret topmargin for at undgå overlapning med burgermenu */
   }
 }
@@ -203,6 +209,7 @@ body {
   justify-content: center;
   padding: 20px;
   background-color: #e8e8d7; /* Baggrundsfarve */
+  margin-bottom: 50px;
 }
 
 /* Media query for mindre skærme som tablets */
@@ -307,9 +314,9 @@ body {
   font-family: "Playfair Display", serif;
   font-size: 35px;
   color: #374375;
-  margin-top: 137%;
+  margin-top: 132%;
   align-self: center;
-  margin-bottom: 110px;
+  margin-bottom: 105px;
 }
 
 /************ media til tekst o ******/
@@ -325,7 +332,8 @@ body {
     margin-bottom: 10px; /* Tilføjer afstand mellem sektionerne */
   }
 
-  .read-more {
+  .read-more,
+  .read-more1 {
     order: 2; /* Placer knappen efter tekst */
     width: auto;
     padding: 10px 50px; /* Mere klikbar størrelse */
@@ -365,8 +373,9 @@ body {
 
 .social-links a {
   color: #e8e8d7; /* Hvid farve links */
-  margin: 10px; /* Afstand mellem links */
+  margin: 0 10px; /* Afstand mellem links */
   font-size: 40px; /* Større ikoner */
+  margin-right: 20px;
 }
 
 .social-links a:hover {
@@ -374,27 +383,61 @@ body {
   cursor: pointer;
 }
 
+/************** media til social ikonerne *********/
+@media (max-width: 480px) {
+  .footer-socials {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-link {
+    margin: 5px 0; /* Mere vertikal afstand på små skærme */
+    margin-top: 20px;
+  }
+}
+
+/************ tekst til footer **********/
+.footer-text h3 {
+  font-family: "Playfair Display", serif;
+  margin-top: 20px;
+  margin-left: 15px;
+  font-size: 20px;
+  font-style: italic;
+  text-align: left;
+  color: #e8e8d7; /* Farve på tekst */
+}
+
+.footer-text p {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: #9099bc;
+}
 /************** form til footer *********/
 .contact-container {
-  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
   max-width: 600px;
-  justify-content: end;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin: 0 auto;
 }
 form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
+
 .form-row {
   display: flex;
+  justify-content: space-around;
   gap: 10px;
 }
 
 input[type="text"] {
   flex: 1; /* Giver inputfelterne fleksibilitet til at fylde tilgængelig plads */
-  margin-right: 10px; /* Giver plads mellem input felterne */
   padding: 8px;
   border: 2px solid #e8e8d7;
 }
@@ -404,12 +447,23 @@ input[type="text"]:last-child,
   margin-right: 0; /* Fjerner margin for det sidste element */
 }
 
+.form-bottom {
+  display: flex; /* Gør det muligt at justere størrelsen på 'EMNE' inputfeltet */
+}
+
+.form-text {
+  /* Styling for 'EMNE' inputfelt */
+  padding: 8px;
+  border: 2px solid #374375;
+}
+
 button {
   background: #e8e8d7;
   border: none;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
   font-size: 16px;
+  width: 100%;
   transition: background-color 0.3s ease;
 }
 button:hover {
@@ -418,18 +472,21 @@ button:hover {
 
 /************ media til form i footer **********/
 @media (max-width: 768px) {
-  .form-row {
+  .form-row,
+  .form-bottom {
     flex-direction: column;
+    align-items: center;
   }
 
-  input[type="text"] {
+  input[type="text"],
+  button {
     width: 100%;
-    margin-right: 0;
+    margin-right: 0px;
   }
 
-  .contact-container {
-    position: static; /* Fjerner absolut positionering på små skærme */
-    width: 100%; /* Fylder fuld bredde af skærmen */
-    left: 0; /* Nulstiller venstre margen */
+  input[type="text"],
+  button {
+    margin-right: 0; /* Fjerner højre margin, da det ikke længere er nødvendigt */
+    width: 100%; /* Sørger for at inputfelter og knap fylder hele bredden */
   }
 }

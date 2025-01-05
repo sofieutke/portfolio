@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-title {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-size: 36px;
+  color: #374375;
+  padding: 50px;
+  text-align: start;
+  margin-top: 50px;
+  margin-left: 15px;
+}
+
+/************ grid på tema siderne *************/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* To kolonner med lige bredde */
+  gap: 30px;
+  padding: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.grid-text {
+  padding: 40px; /* Tilføjer mere padding for at give mere plads indeni boksen */
+  border: 1px solid #374375; /* Tilføjer en mørkeblå stroke rundt om boksen */
+  background-color: #e8e8d7;
+  margin: 10px; /* Tilføjer margin for at skabe afstand mellem bokse */
+  line-height: 30px;
+  max-width: 700px;
+  min-width: 300px;
+  font-family: "Lora", serif;
+  margin-bottom: 30px;
+}
+
+/************** styling for midter tekst og billede ******/
+.small-image img {
+  max-width: 70%;
+  height: 100%;
+  margin: 10px auto; /* Centrerer billedet i grid-cellen */
+  display: block;
+}
+
+.small-text {
+  max-width: 700px;
+  min-width: 300px;
+  max-height: 400px;
+  padding: 40px;
+  margin-left: 50px;
+  line-height: 30px;
+  margin-top: 40px;
+}
+
+/************** media for midter sektion ************/
+@media (max-width: 768px) {
+  .small-image img {
+    width: 100%; /* Øger bredden på meget små skærme for bedre visning */
+  }
+  .small-text {
+    max-width: 95%; /* Giver mere plads til tekst på små skærme */
+    margin: 10px auto; /* Reducerer margen for at spare plads */
+    padding: 10px; /* Justerer padding til mindre skærme */
+  }
+}
+
+/*********** styling til det brede billede *********/
+.image img,
+.wide-image img {
+  width: 100%;
+  height: 90%;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.wide-image {
+  grid-column: 1 / -1; /* Sørger for at billedet spænder over alle tilgængelige kolonner */
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+/************ media for den brede billede ***********/
+@media (max-width: 768px) {
+  .wide-image {
+    padding: 15px; /* Mindre padding for at give mere plads til billedet på skærmen */
+  }
+}
+
+/* Responsiv tilpasning for meget små skærme */
+@media (max-width: 480px) {
+  .wide-image {
+    padding: 10px; /* Endnu mindre padding for at maksimere tilgængelig skærmplads */
+  }
+  .grid-text,
+  .image,
+  .small-image,
+  .small-text {
+    padding: 5px; /* Reducerer padding på alle billeder og tekst for at skabe mere plads */
+    margin: 5px 0; /* Mindre vertikal margin */
+  }
+  .small-image {
+    max-width: 100%;
+  }
+}
+
+/********** Grid container styling til mindre skærme *********/
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* En enkelt kolonne på små enheder */
+    padding: 30px;
+  }
+
+  .grid-knap {
+    order: 2; /* Placer knappen efter tekst */
+    padding: 40px 20px; /* Mere klikbar størrelse */
+  }
+}
+
+/************ styling for ketchup og indhold billede **********/
+.ketchup-container {
+  grid-column: 2; /* Sættes i anden kolonne hvis det passer med layoutet */
+  grid-row: 3; /* Juster dette tal baseret på hvilken række den skal være i */
+}
+
+.ketchup-container img {
+  width: 35%; /* Juster efter behov */
+  height: auto;
+  margin-left: 145px;
+}
+
+.indhold-container {
+  grid-column: 2; /* Sættes i anden kolonne hvis det passer med layoutet */
+  grid-row: 3; /* Juster dette tal baseret på hvilken række den skal være i */
+}
+
+.indhold-container img {
+  width: 55%;
+  height: auto;
+  margin-left: 10px;
+}
+@media (max-width: 768px) {
+  .grid-container,
+  .indhold-container {
+    grid-template-columns: 1fr; /* Skifter til en kolonne på små enheder */
+  }
+  .ketchup-container,
+  .indhold-container {
+    grid-column: 1; /* Sørger for at billedet fylder hele bredden */
+    grid-row: auto; /* Tillader at den automatisk placeres efter indholdet */
+  }
+}
+
+/************ knap til løsning **********/
+.grid-knap {
+  display: flex;
+  justify-content: center; /* Centrerer teksten horisontalt */
+  align-items: center; /* Centrerer teksten vertikalt */
+  background-color: transparent; /* Gør baggrunden gennemsigtig, så billedet kan ses */
+  border: none;
+  cursor: pointer;
+  color: #e8e8d7; /* Skift tekstfarven til hvid for læsbarhed */
+  width: 59%; /* Sørger for at knappen fylder hele bredden af containeren */
+  height: 45%; /* Sæt en fast højde */
+  background-image: url("billeder/knap.webp");
+  background-size: cover; /* Sikrer, at baggrundsbilledet dækker hele knappen */
+  background-position: center; /* Centrerer billedet i knappen */
+  text-decoration: none;
+  font-size: 20px; /* Justér skriftstørrelsen efter behov */
+  margin-left: 90px;
+  margin-top: 70px;
+}
+
+.grid-knap:hover {
+  text-decoration: underline;
+}
+
+/* Responsiv tilpasning for tablets */
+@media (max-width: 768px) {
+  .grid-knap {
+    font-size: 16px; /* Mindre skriftstørrelse for bedre læsbarhed */
+    width: 60%; /* Mindre bredde på tablet */
+    height: 45%; /* Mindre højde på tablet */
+    margin-left: 90px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .grid-text,
+  .image,
+  .wide-image,
+  .small-image {
+    padding: 15px; /* Mindre padding på mindre skærme */
+    margin: 10px; /* Mindre margin på mindre skærme */
+  }
+  .grid-title {
+    font-size: 30px;
+  }
+}
+
+/* Responsiv tilpasning for smartphones */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* En enkelt kolonne på små enheder */
+  }
+  .grid-knap {
+    font-size: 14px; /* Endnu mindre skriftstørrelse */
+    width: 75%; /* Mindre bredde på tablet */
+    height: 35%; /* Mindre højde på tablet */
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+  .grid-text {
+    font-size: 15px;
+  }
+}
+
+/************ styling af custom knap *********/
+.custom-knap {
+  width: 55%; /* Eksempel: mindre bredde */
+  height: 33%;
+  margin: auto; /* Centrerer knappen hvis nødvendigt */
+  padding: 15px; /* Større klikbar område */
+  font-size: 18px; /* Tilpasning af skriftstørrelsen */
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .custom-knap {
+    width: 54%; /* Justerer bredden på tablets */
+    height: 40%;
+    font-size: 16px; /* Reducerer skriftstørrelsen */
+    margin-left: 90px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-knap {
+    width: 75%; /* Fylder hele bredden på små enheder */
+    height: 35%;
+    padding: 10px; /* Mindre padding */
+    font-size: 14px; /* Yderligere reduceret skriftstørrelse */
+    margin-left: 50px;
+    margin-bottom: 45px;
+  }
+}
