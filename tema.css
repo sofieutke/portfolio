@@ -11,7 +11,7 @@
   color: #374375;
   padding: 50px;
   text-align: start;
-  margin-top: 50px;
+  margin-top: 80px;
   margin-left: 15px;
 }
 
@@ -21,8 +21,7 @@
   grid-template-columns: repeat(2, 1fr); /* To kolonner med lige bredde */
   gap: 30px;
   padding: 20px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin: auto;
 }
 .grid-text {
   padding: 40px; /* Tilføjer mere padding for at give mere plads indeni boksen */
@@ -97,24 +96,11 @@
   .image,
   .small-image,
   .small-text {
-    padding: 5px; /* Reducerer padding på alle billeder og tekst for at skabe mere plads */
+    padding: 15px; /* Reducerer padding på alle billeder og tekst for at skabe mere plads */
     margin: 5px 0; /* Mindre vertikal margin */
   }
   .small-image {
     max-width: 100%;
-  }
-}
-
-/********** Grid container styling til mindre skærme *********/
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr; /* En enkelt kolonne på små enheder */
-    padding: 30px;
-  }
-
-  .grid-knap {
-    order: 2; /* Placer knappen efter tekst */
-    padding: 40px 20px; /* Mere klikbar størrelse */
   }
 }
 
@@ -145,12 +131,18 @@
   .grid-container,
   .indhold-container {
     grid-template-columns: 1fr;
-    padding: 5px;
   }
   .ketchup-container,
   .indhold-container {
     grid-column: 1; /* Sørger for at billedet fylder hele bredden */
     grid-row: auto; /* Tillader at den automatisk placeres efter indholdet */
+  }
+  .ketchup-container img {
+    margin-left: 140px;
+    margin-bottom: 40px;
+  }
+  .indhold-container img {
+    margin-left: 110px;
   }
 }
 
@@ -163,14 +155,11 @@
   border: none;
   cursor: pointer;
   color: #e8e8d7; /* Skift tekstfarven til hvid for læsbarhed */
-  width: 56%; /* Sørger for at knappen fylder hele bredden af containeren */
-  height: 37%; /* Sæt en fast højde */
-  background-image: url("billeder/knap.webp");
   background-size: cover; /* Sikrer, at baggrundsbilledet dækker hele knappen */
   background-position: center; /* Centrerer billedet i knappen */
   text-decoration: none;
   font-size: 20px; /* Justér skriftstørrelsen efter behov */
-  margin-left: 90px;
+  margin-left: 80px;
   margin-top: 70px;
 }
 
@@ -180,17 +169,9 @@
 
 /* Responsiv tilpasning for tablets */
 @media (max-width: 768px) {
-  .grid-knap {
-    font-size: 16px; /* Mindre skriftstørrelse for bedre læsbarhed */
-    width: 60%; /* Mindre bredde på tablet */
-    height: 45%; /* Mindre højde på tablet */
-    margin-left: 90px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
-
   .grid-title {
     font-size: 30px;
+    padding: 10px;
   }
 }
 
@@ -200,59 +181,61 @@
   .indhold-container {
     grid-template-columns: 1fr; /* En enkelt kolonne på små enheder */
   }
-  .grid-knap {
-    font-size: 14px; /* Endnu mindre skriftstørrelse */
-    width: 70%; /* Mindre bredde på tablet */
-    height: 37%; /* Mindre højde på tablet */
-    margin-left: 40px;
-    margin-top: 20px;
-  }
   .grid-text {
     font-size: 15px;
-  }
-  .indhold-container {
-    margin-left: 80px;
+    padding: 10px;
   }
 }
 
 /************ styling af custom knap *********/
-.custom-knap {
-  width: 57%; /* Eksempel: mindre bredde */
-  height: 31%;
-  margin: auto; /* Centrerer knappen hvis nødvendigt */
-  font-size: 18px; /* Tilpasning af skriftstørrelsen */
-  margin-top: 40px;
-  margin-left: 90px;
+.knap-container {
+  text-align: center;
+  justify-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .custom-knap1 {
-  width: 50%; /* Eksempel: mindre bredde */
-  height: 39%;
-  margin: auto; /* Centrerer knappen hvis nødvendigt */
-  font-size: 18px; /* Tilpasning af skriftstørrelsen */
-  margin-top: 40px;
-  margin-left: 90px;
+  display: inline-block;
+  width: 55%;
+  height: auto;
+  padding: 59px 35px;
+  cursor: pointer;
+  margin-right: 55px;
+  background-size: cover;
+  background-position: center;
 }
 
+.custom-knap1:hover {
+  text-decoration: underline;
+}
+
+/* Media queries for tablets */
 @media (max-width: 768px) {
-  .custom-knap,
+  .knap-container {
+    max-width: 500px; /* Mindre maksimal bredde for tablets */
+    margin-right: 60px;
+  }
+
   .custom-knap1 {
-    width: 54%; /* Justerer bredden på tablets */
-    height: 45%;
-    font-size: 16px; /* Reducerer skriftstørrelsen */
-    margin-left: 90px;
-    margin-bottom: 25px;
+    width: 70%; /* Lidt bredere for bedre tilgængelighed på tablet */
+    padding: 50px 25px; /* Mindre padding */
   }
 }
 
+/* Media queries for smartphones */
 @media (max-width: 480px) {
-  .custom-knap,
+  .knap-container {
+    max-width: 100%; /* Benytter hele bredden tilgængelig */
+    padding: 10px; /* Tilføjer padding til containeren for at undgå at knappen rører kanterne */
+    margin-top: 5px; /* Mindre top margin */
+  }
+
   .custom-knap1 {
-    width: 70%; /* Fylder hele bredden på små enheder */
-    height: 37%;
-    padding: 5px; /* Mindre padding */
-    font-size: 14px; /* Yderligere reduceret skriftstørrelse */
-    margin-left: 50px;
-    margin-bottom: 70px;
+    width: 75%; /* Benytter hele bredden tilgængelig */
+    padding: 50px 25px; /* Justerer padding til mindre skærme */
+    height: auto; /* Sikrer at højden tilpasses indholdet */
+    margin-right: 46px;
   }
 }

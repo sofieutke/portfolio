@@ -23,7 +23,7 @@
   font-size: 18px;
   color: #374375;
   text-align: start;
-  margin-left: 25px;
+  margin-top: 70px;
 }
 
 .intro-container p {
@@ -126,6 +126,9 @@
     flex-direction: column; /* Skifter til vertikal stak på små skærme */
   }
 
+  .intro-container {
+    font-size: 12px;
+  }
   .profile-image {
     width: 70%; /* Gør billedet større på små skærme */
     margin-left: 0; /* Fjerner venstre margin for at centrere billedet */
