@@ -170,6 +170,10 @@ body {
   display: block;
   cursor: pointer;
 }
+
+.hero-title:hover {
+  color: #9099bc;
+}
 /************ media for mindre skærme til hero title ******/
 /* Media query for mindre skærme som tablets */
 @media (max-width: 768px) {

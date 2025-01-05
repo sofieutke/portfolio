@@ -164,7 +164,7 @@
   cursor: pointer;
   color: #e8e8d7; /* Skift tekstfarven til hvid for læsbarhed */
   width: 56%; /* Sørger for at knappen fylder hele bredden af containeren */
-  height: 35%; /* Sæt en fast højde */
+  height: 37%; /* Sæt en fast højde */
   background-image: url("billeder/knap.webp");
   background-size: cover; /* Sikrer, at baggrundsbilledet dækker hele knappen */
   background-position: center; /* Centrerer billedet i knappen */

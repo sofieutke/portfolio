@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofies portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Corben&family=Lato:wght@700&family=Lexend+Exa:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Corben&family=Lato:wght@700&family=Lexend+Exa:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="aboutme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+
+<body>
+    <header>
+
+        <div class="hero-title">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1>SOFIE UTKE | PORTFOLIO </h1>
+            </a>
+        </div>
+
+
+        <div class="burger" onclick="openNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+
+        <!-- The overlay -->
+        <div id="myNav" class="overlay">
+
+            <!-- Button to close the overlay navigation -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <a href="tema2.html">TEMA 02</a>
+                <a href="tema3.html">TEMA 03</a>
+                <a href="tema4.html">TEMA 04</a>
+                <a href="tema5.html">TEMA 05</a>
+                <a href="aboutme.html">OM SOFIE</a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="header">
+            <div class="intro-container">
+                <h1>Sofie Utke Bovenschulte</h1>
+                <p>Velkommen til mit digitale kreative univers. Som multimediedesigner fra KEA kombinerer jeg
+                    kreativitet
+                    med teknisk
+                    ekspertise for at skabe unikke digitale oplevelser.</p>
+            </div>
+            <img src="billeder/omsofie.webp" alt="aboutme" class="profile-image">
+        </div>
+
+        <button class="accordion">2024: Projektkoordinator hos TEIRA1996</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <button class="accordion">2024: Founder af Vida Collective</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <button class="accordion">2022-2024: Junior Buyer hos Boozt</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+        <button class="accordion">2022-2023: SoMe ansvarlig / Content Creator for Elixir Cosmeceuticals</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+        <button class="accordion">Teknisk og Kreativ Ekspertise</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <div class="aboutme-section">
+            <div class="sofie-text">
+                <p>Min uddannelse og arbejdserfaring har udviklet mine evner til både kreative og tekniske opgaver. Jeg
+                    trives med at skabe
+                    digitale løsninger, der elegant balancerer design og funktionalitet. Udforsk mit portfolio nedenfor
+                    og se hvordan jeg
+                    omsætter kreative ideer til virkelighed.</p>
+                <a href="tema2.html" class="udforsk-knap" style="background-image: url(billeder/knap.webp);">Min
+                    projekter</a>
+            </div>
+        </div>
+
+        <script src="login.js"></script>
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-text">
+            <h3>SOFIE UTKE | PORTFOLIO </h3>
+            <p>Multimediedesign studerende - Hold C</p>
+        </div>
+
+        <div class="contact-container">
+            <form>
+                <div class="form-row">
+                    <input type="text" placeholder="NAVN">
+                    <input type="text" placeholder="EMAIL">
+                </div>
+                <div class="form-bottom">
+                    <input type="text" placeholder="EMNE" class="form-text">
+                </div>
+                <button type="submit">SEND</button>
+            </form>
+        </div>
+        <div class="social-links">
+            <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:sobo0001@stud.kea.dk" class="social-link"><i class="fas fa-envelope"></i></a>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

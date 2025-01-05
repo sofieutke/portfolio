@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*********** styling til intro + portræt ********/
+.header {
+  display: flex;
+  align-items: center; /* Sikrer vertikal centrerings af billede og tekst */
+  justify-content: center; /* Centrerer indholdet horisontalt i browseren */
+  padding: 20px;
+  max-width: 1200px; /* Kontrollerer den maksimale bredde af headeren */
+  margin: auto; /* Centrerer headeren på siden */
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column; /* Stakker h1 og p vertikalt */
+  flex: 1; /* Tillader containeren at fylde tilgængelig plads undtagen billedets plads */
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #374375;
+  text-align: start;
+  margin-left: 25px;
+}
+
+.intro-container p {
+  font-family: "Lora", serif;
+  font-size: 18px;
+  max-width: 600px;
+  margin-top: 10px;
+  line-height: 35px;
+}
+.profile-image {
+  width: 30%;
+  height: auto;
+  margin-left: 20px;
+}
+
+/************** styling af accordion **********/
+.accordion {
+  background-color: #e8e8d7;
+  color: #374375;
+  cursor: pointer;
+  padding: 30px;
+  width: 100%;
+  justify-content: center;
+  border: none;
+  transition: 0.4s;
+  font-family: "Poppins", serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.accordion:hover {
+  background-color: #9099bc;
+  color: #780000;
+  text-decoration: underline;
+}
+
+.panel {
+  padding: 0 20px;
+  background-color: #e8e8d7;
+  display: none;
+  overflow: hidden;
+  text-align: center;
+  font-family: "Lora", serif;
+  font-size: 18px;
+}
+
+/************* styling af tekstboks med knap *********/
+.aboutme-section {
+  background-image: url("billeder/baggrund.webp"); /* Angiv stien til dit baggrundsbillede */
+  background-size: cover; /* Sikrer at billedet dækker hele elementet */
+  background-position: center; /* Centrerer baggrundsbilledet */
+  padding: 70px 20px; /* Tilføjer padding for at give plads inden i sektionen */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Dette vil centrere tekstboksen både horisontalt og vertikalt */
+  min-height: 400px; /* Giver en minimum højde til sektionen */
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.sofie-text {
+  background-color: #d9d9d9;
+  padding: 70px;
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.sofie-text p {
+  font-family: "Lora", serif;
+  font-size: 18px;
+  font-weight: 200;
+  color: #374375;
+  line-height: 37px;
+}
+
+/************* udforsk knap styling ***********/
+.udforsk-knap {
+  display: block; /* Gør knappen til et blokelement */
+  background-size: cover; /* Dækker hele knappens område */
+  background-position: center; /* Centrerer billedet i knappen */
+  color: #e8e8d7;
+  text-decoration: none; /* Fjerner underlining fra linket */
+  padding: 40px 50px; /* Padding omkring teksten */
+  margin-top: 20px; /* Afstand fra teksten til knappen */
+  width: 200px; /* Bredde på knappen */
+  margin: 20px auto 0; /* Centrerer knappen under tekstboksen */
+  z-index: 10; /* Sikrer at knappen vises over andre elementer */
+  position: relative; /* Krævet for z-index for at have effekt */
+}
+
+.udforsk-knap:hover {
+  text-decoration: underline;
+}
+
+/************ styling til mindre skærme *******/
+/* Responsivt design for skærme under 768px */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Skifter til vertikal stak på små skærme */
+  }
+
+  .profile-image {
+    width: 70%; /* Gør billedet større på små skærme */
+    margin-left: 0; /* Fjerner venstre margin for at centrere billedet */
+    margin-top: 20px; /* Tilføjer lidt vertikal plads mellem tekst og billede */
+  }
+  .accordion {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .panel {
+    padding: 10px;
+  }
+
+  .udforsk-knap {
+    padding: 50px 20px;
+    font-size: 18px;
+    width: 80%;
+    margin-left: 30px;
+  }
+
+  .sofie-text {
+    padding: 20px;
+    font-size: 10px;
+  }
+}
