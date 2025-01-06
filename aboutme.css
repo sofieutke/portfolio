@@ -23,7 +23,7 @@
   font-size: 18px;
   color: #374375;
   text-align: start;
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 .intro-container p {
@@ -63,11 +63,29 @@
 .panel {
   padding: 0 20px;
   background-color: #e8e8d7;
+  justify-content: center; /* Centrerer indholdet horisontalt */
+  align-items: center; /* Centrerer indholdet vertikalt */
   display: none;
   overflow: hidden;
   text-align: center;
   font-family: "Lora", serif;
   font-size: 18px;
+}
+
+.panel p {
+  font-family: "Lora", serif;
+  font: 17px;
+  line-height: 1.8;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+}
+
+.panel strong {
+  display: block;
+  font-weight: bold; /* Bekræfter fed tekst */
+  font-size: 18px; /* Valgfri: Juster størrelsen på din tekst, hvis nødvendigt */
+  color: #374375;
 }
 
 /************* styling af tekstboks med knap *********/

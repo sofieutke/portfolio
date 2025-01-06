@@ -20,8 +20,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* To kolonner med lige bredde */
   gap: 30px;
-  padding: 20px;
-  margin: auto;
+  padding: 40px;
+  align-items: start; /* Sørger for at elementer starter ved toppen af deres celle */
 }
 .grid-text {
   padding: 40px; /* Tilføjer mere padding for at give mere plads indeni boksen */
@@ -32,12 +32,13 @@
   max-width: 700px;
   min-width: 300px;
   font-family: "Lora", serif;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  margin-right: 40px;
 }
 
 /************** styling for midter tekst og billede ******/
 .small-image img {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   margin: 10px auto; /* Centrerer billedet i grid-cellen */
   display: block;
@@ -46,17 +47,17 @@
 .small-text {
   max-width: 700px;
   min-width: 300px;
-  max-height: 400px;
+  max-height: 300px;
   padding: 40px;
   margin-left: 50px;
   line-height: 30px;
-  margin-top: 40px;
+  margin-top: 70px;
 }
 
 /************** media for midter sektion ************/
 @media (max-width: 768px) {
   .small-image img {
-    width: 100%; /* Øger bredden på meget små skærme for bedre visning */
+    max-width: 100%; /* Øger bredden på meget små skærme for bedre visning */
   }
   .small-text {
     max-width: 95%; /* Giver mere plads til tekst på små skærme */
@@ -70,14 +71,21 @@
 .wide-image img {
   width: 100%;
   height: 90%;
-  margin-bottom: 10px;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 .wide-image {
   grid-column: 1 / -1; /* Sørger for at billedet spænder over alle tilgængelige kolonner */
-  padding: 0px;
   margin: 0;
+  margin-bottom: 20px;
+  margin-right: 40px;
+}
+
+.computer-image {
+  max-width: 70%;
+  height: auto;
+  margin-left: 90px;
+  display: block;
 }
 
 /************ media for den brede billede ***********/
@@ -91,6 +99,7 @@
 @media (max-width: 480px) {
   .wide-image {
     padding: 5px; /* Endnu mindre padding for at maksimere tilgængelig skærmplads */
+    margin-right: 10px;
   }
   .grid-text,
   .image,
@@ -125,7 +134,6 @@
   width: 55%;
   height: auto;
   margin-left: 20px;
-  margin-bottom: 40px;
 }
 @media (max-width: 768px) {
   .grid-container,
@@ -159,7 +167,7 @@
   background-position: center; /* Centrerer billedet i knappen */
   text-decoration: none;
   font-size: 20px; /* Justér skriftstørrelsen efter behov */
-  margin-left: 80px;
+  margin-left: 40px;
   margin-top: 70px;
 }
 
@@ -214,28 +222,29 @@
 /* Media queries for tablets */
 @media (max-width: 768px) {
   .knap-container {
-    max-width: 500px; /* Mindre maksimal bredde for tablets */
-    margin-right: 60px;
+    max-width: 100%; /* Gør maksimal bredden til 100% af skærmen */
+    margin: 0 auto; /* Centrerer containeren */
+    padding: 10px; /* Standard padding for at undgå at knappen rører kanterne */
   }
 
   .custom-knap1 {
-    width: 70%; /* Lidt bredere for bedre tilgængelighed på tablet */
-    padding: 50px 25px; /* Mindre padding */
+    width: 70%; /* Gør knappen fyld hele bredden */
+    padding: 48px; /* Justér padding for at bevare korrekt proportion */
+    font-size: 16px; /* Justér font størrelse for bedre læsbarhed */
   }
 }
 
 /* Media queries for smartphones */
 @media (max-width: 480px) {
   .knap-container {
-    max-width: 100%; /* Benytter hele bredden tilgængelig */
     padding: 10px; /* Tilføjer padding til containeren for at undgå at knappen rører kanterne */
     margin-top: 5px; /* Mindre top margin */
   }
 
   .custom-knap1 {
-    width: 75%; /* Benytter hele bredden tilgængelig */
-    padding: 50px 25px; /* Justerer padding til mindre skærme */
+    width: 70%; /* Gør knappen fyld hele bredden, fjern 210% som var for meget */
     height: auto; /* Sikrer at højden tilpasses indholdet */
-    margin-right: 46px;
+    padding: 38px; /* Juster padding for mindre skærme */
+    font-size: 16px; /* Reducer font størrelsen for bedre tilpasning */
   }
 }
