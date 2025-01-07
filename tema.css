@@ -78,8 +78,8 @@ main {
 .grid-knap,
 .custom-knap1 {
   display: block;
-  width: 100%;
-  padding: 60px;
+  width: 90%;
+  padding: 50px;
   text-align: center;
   background-color: transparent;
   border: none;
